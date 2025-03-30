@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/affiliate-app/static/css/main.116f28e6.css",
+    "main.js": "/affiliate-app/static/js/main.6fc41905.js",
+    "index.html": "/affiliate-app/index.html",
+    "main.116f28e6.css.map": "/affiliate-app/static/css/main.116f28e6.css.map",
+    "main.6fc41905.js.map": "/affiliate-app/static/js/main.6fc41905.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.116f28e6.css",
+    "static/js/main.6fc41905.js"
+  ]
+}
