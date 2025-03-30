@@ -47,28 +47,20 @@ export const mockAffiliateLinks = [
     }
   ];
   
-  // Mock user data
+  // Simplified mock user data - just an ID for linking affiliate products
   export const mockUserData = {
-    uid: 'mock-user-123',
-    email: 'demo@example.com',
-    displayName: 'Demo User',
-    photoURL: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop'
+    uid: 'mock-user-123'
   };
   
-  // Local storage keys
+  // Local storage keys - only need links now
   export const STORAGE_KEYS = {
-    LINKS: 'affiliate_links',
-    USER: 'user_data'
+    LINKS: 'affiliate_links'
   };
   
   // Initialize local storage with mock data if empty
   export const initializeMockData = () => {
     if (!localStorage.getItem(STORAGE_KEYS.LINKS)) {
       localStorage.setItem(STORAGE_KEYS.LINKS, JSON.stringify(mockAffiliateLinks));
-    }
-    
-    if (!localStorage.getItem(STORAGE_KEYS.USER)) {
-      localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(mockUserData));
     }
   };
   
@@ -98,16 +90,7 @@ export const mockAffiliateLinks = [
     localStorage.setItem(STORAGE_KEYS.LINKS, JSON.stringify(updatedLinks));
   };
   
-  // Update user data
-  export const updateUserData = (userData) => {
-    localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify({
-      ...mockUserData,
-      ...userData
-    }));
-  };
-  
-  // Get user data
+  // Get mock user data - simplified version
   export const getUserData = () => {
-    const userData = localStorage.getItem(STORAGE_KEYS.USER);
-    return userData ? JSON.parse(userData) : mockUserData;
+    return mockUserData;
   };

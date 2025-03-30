@@ -29,23 +29,11 @@ function Navbar() {
           >
             Add Link
           </Link>
-          <Link 
-            to="/profile" 
-            className={`navbar-item ${location.pathname === '/profile' ? 'active' : ''}`}
-          >
-            Profile
-          </Link>
+
           
           <div className="navbar-right">
             <div className="navbar-user">
-              {userData.photoURL ? (
-                <img src={userData.photoURL} alt="Profile" className="navbar-user-pic" />
-              ) : (
-                <div className="navbar-user-pic-placeholder">
-                  {userData.displayName ? userData.displayName.charAt(0).toUpperCase() : '?'}
-                </div>
-              )}
-              <span className="navbar-username">{userData.displayName || userData.email}</span>
+              <span className="navbar-username">Demo Mode</span>
             </div>
           </div>
         </div>
