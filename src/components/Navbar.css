@@ -12,19 +12,30 @@
     padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
-    height: 60px;
+    height: 70px;
   }
   
   .navbar-brand {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
   }
   
   .navbar-brand:hover {
     color: var(--primary-color);
+  }
+  
+  .navbar-logo {
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    padding: 2px;
   }
   
   .navbar-menu {
@@ -36,13 +47,21 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .navbar-container {
-      flex-wrap: wrap;
       height: auto;
       padding: 10px 20px;
     }
     
     .navbar-brand {
       margin-right: 0;
-      width: 100%;
+      font-size: 14px;
+    }
+    
+    .navbar-brand span {
+      display: none; /* Hide tagline on mobile */
+    }
+    
+    .navbar-logo {
+      height: 36px;
+      margin-right: 0;
     }
   }

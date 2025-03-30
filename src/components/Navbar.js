@@ -12,30 +12,18 @@ function Navbar() {
   return (
     <nav className="navbar" style={{ backgroundColor: '#232F3E' }}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-brand" style={{ color: 'white', fontWeight: 'bold' }}>
-          Amazon Affiliate Links
+        <Link to="/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center' }}>
+          <div className="navbar-logo">
+            {/* Using external SVG file */}
+            <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt="The Review Nest" style={{ width: '100%', height: '100%' }} />
+          </div>
+          <span style={{ color: 'white', fontWeight: '500', marginLeft: '12px' }}>
+            Your Trusted Resource for Product Reviews
+          </span>
         </Link>
         
         <div className="navbar-menu">
-          {/* <Link 
-            to="/" 
-            className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`}
-          >
-            My Links
-          </Link>
-          <Link 
-            to="/add-link" 
-            className={`navbar-item ${location.pathname === '/add-link' ? 'active' : ''}`}
-          >
-            Add Link
-          </Link> */}
-
-          
-          {/* <div className="navbar-right">
-            <div className="navbar-user">
-              <span className="navbar-username">Demo Mode</span>
-            </div>
-          </div> */}
+          {/* Navigation items removed as requested */}
         </div>
       </div>
     </nav>

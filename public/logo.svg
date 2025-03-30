@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9db0" />
+      <stop offset="100%" stop-color="#ffb989" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circle background -->
+  <circle cx="250" cy="250" r="240" fill="url(#bgGradient)" />
+  
+  <!-- Outer circle border -->
+  <circle cx="250" cy="250" r="235" fill="none" stroke="#333" stroke-width="3" />
+  <circle cx="250" cy="250" r="230" fill="none" stroke="#333" stroke-width="2" />
+  
+  <!-- Text elements -->
+  <g fill="#333333">
+    <!-- "the" script text -->
+    <path d="M240,150 C245,145 250,140 255,145 C260,150 255,155 250,160 C245,165 240,170 235,175 C230,180 225,185 220,190 C215,195 220,185 225,180 C230,175 235,170 240,165 C245,160 250,155 260,160 C270,165 275,170 280,175 C285,180 290,185 295,180 C300,175 305,170 310,165" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- "REVIEW" text -->
+    <text x="250" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" font-weight="bold">REVIEW</text>
+    
+    <!-- "NEST" text -->
+    <text x="250" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="40">NEST</text>
+    
+    <!-- "ESTD 2025" text -->
+    <text x="250" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">ESTD 2025</text>
+  </g>
+</svg>
