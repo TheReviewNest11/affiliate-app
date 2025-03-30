@@ -2,11 +2,11 @@
 export const mockAffiliateLinks = [
     {
       id: '1',
-      productUrl: 'https://www.amazon.com/dp/B08N5KWB9H',
-      productName: 'Wireless Earbuds',
-      productDescription: 'Bluetooth 5.0 wireless earbuds with noise cancellation and long battery life.',
-      productImage: 'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f37?w=600&auto=format&fit=crop',
-      category: 'Electronics',
+      productUrl: 'https://www.amazon.in/dp/B0DQCV2ZHV?th=1&linkCode=ll1&tag=thereviewne0b-21&linkId=dc4f0897f32abe237e8d531e90109c05&language=en_IN&ref_=as_li_ss_tl',
+      productName: 'PANCA Stainless Steel Paneer Maker ',
+      productDescription: 'PANCA Stainless Steel Paneer Maker Mould Medium Size, Paneer Press With Lid, Tofu Press Mould Maker, Whey Seperator (Square, 450ml Capacity)',
+      productImage: 'https://m.media-amazon.com/images/I/71eRy+IG1NL._SX679_.jpg',
+      category: 'Kitchen & Dining',
       createdAt: new Date('2023-01-15')
     },
     {
