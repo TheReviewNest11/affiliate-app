@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../App';
 import { addLink } from '../data/mockData';
 import './AddLink.css';
@@ -72,7 +72,10 @@ function AddLink() {
   return (
     <div className="add-link-container">
       <div className="add-link-card">
-        <h1>Add Amazon Affiliate Link</h1>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+          <h1>Add Amazon Affiliate Link</h1>
+          <Link to="/" className="back-btn" style={{ padding: '8px 15px', background: '#f5f5f5', border: '1px solid #ddd', borderRadius: '4px', textDecoration: 'none', color: '#333' }}>Back to Links</Link>
+        </div>
         
         <form onSubmit={handleSubmit}>
           <div className="form-group">
