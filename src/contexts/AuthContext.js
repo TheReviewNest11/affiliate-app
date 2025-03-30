@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth, db } from '../firebase';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
 
+// Create a context
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -13,39 +11,45 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Simulate authentication on component mount
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setCurrentUser(user);
-      
-      if (user) {
-        // Check if user document exists in Firestore
-        const userRef = doc(db, 'users', user.uid);
-        const userSnap = await getDoc(userRef);
-        
-        // If not, create a new user document
-        if (!userSnap.exists()) {
-          await setDoc(userRef, {
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName || '',
-            photoURL: user.photoURL || '',
-            createdAt: new Date()
-          });
-        }
-      }
-      
+    // Simulate auth state change after a delay
+    const timeout = setTimeout(() => {
+      // For demo purposes, always log in a mock user
+      const mockUser = {
+        uid: 'demo-user-123',
+        email: 'demo@example.com',
+        displayName: 'Demo User',
+        photoURL: null
+      };
+      setCurrentUser(mockUser);
       setLoading(false);
-    });
+    }, 1000);
 
-    return unsubscribe;
+    return () => clearTimeout(timeout);
   }, []);
 
+  // Mock login function
+  const login = () => {
+    const mockUser = {
+      uid: 'demo-user-123',
+      email: 'demo@example.com',
+      displayName: 'Demo User',
+      photoURL: null
+    };
+    setCurrentUser(mockUser);
+    return Promise.resolve();
+  };
+
+  // Mock logout function
   const logout = () => {
-    return signOut(auth);
+    setCurrentUser(null);
+    return Promise.resolve();
   };
 
   const value = {
     currentUser,
+    login,
     logout
   };
 

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { db } from '../firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { useAuth } from '../contexts/AuthContext';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../App';
+import { addLink } from '../data/mockData';
 import './AddLink.css';
 
 function AddLink() {
-  const { currentUser } = useAuth();
+  const { currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
   const [productUrl, setProductUrl] = useState('');
   const [productName, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
@@ -14,28 +15,7 @@ function AddLink() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const extractAmazonProductInfo = (url) => {
-    // This is a simplified example
-    // In a real application, you might use Amazon's Product Advertising API
-    // or parse more sophisticated data from the URL
-    
-    // Just setting some default values for now
-    setProductName('');
-    setProductDescription('');
-    setProductImage('');
-  };
-
-  const handleUrlChange = (e) => {
-    const url = e.target.value;
-    setProductUrl(url);
-    
-    // Only try to extract info if it's an Amazon URL
-    if (url.includes('amazon.com') || url.includes('amzn.to')) {
-      extractAmazonProductInfo(url);
-    }
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage('');
@@ -55,24 +35,32 @@ function AddLink() {
     }
 
     try {
-      await addDoc(collection(db, 'affiliateLinks'), {
+      // Add new link to local storage
+      addLink({
         userId: currentUser.uid,
         productUrl,
         productName,
         productDescription,
         productImage,
-        category,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp()
+        category
       });
 
-      // Reset form
-      setProductUrl('');
-      setProductName('');
-      setProductDescription('');
-      setProductImage('');
-      setCategory('');
+      // Show success message
       setMessage('Affiliate link added successfully!');
+      
+      // Reset form after 1.5 seconds
+      setTimeout(() => {
+        // Reset form
+        setProductUrl('');
+        setProductName('');
+        setProductDescription('');
+        setProductImage('');
+        setCategory('');
+        
+        // Navigate back to links page
+        navigate('/');
+      }, 1500);
+      
     } catch (error) {
       console.error('Error adding affiliate link: ', error);
       setMessage(`Error: ${error.message}`);
@@ -92,7 +80,7 @@ function AddLink() {
             <input
               type="url"
               value={productUrl}
-              onChange={handleUrlChange}
+              onChange={(e) => setProductUrl(e.target.value)}
               placeholder="https://www.amazon.com/product-name/dp/ASIN"
               required
             />
