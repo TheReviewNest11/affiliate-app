@@ -1,0 +1,228 @@
+.link-list-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .link-list-header {
+    margin-bottom: 30px;
+  }
+  
+  .link-list-header h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .link-list-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .view-toggle {
+    display: flex;
+  }
+  
+  .view-btn {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .view-btn:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .view-btn:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .view-btn.active {
+    background-color: #ff9900;
+    color: white;
+    border-color: #ff9900;
+  }
+  
+  .no-links {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-link-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Grid View */
+  .links-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .links-container.grid .link-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .links-container.grid .link-image {
+    height: 200px;
+  }
+  
+  .links-container.grid .link-details {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* List View */
+  .links-container.list .link-item {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .links-container.list .link-image {
+    width: 200px;
+    min-width: 200px;
+  }
+  
+  .links-container.list .link-details {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  /* Common styles */
+  .link-image {
+    position: relative;
+    background-color: #f5f5f5;
+  }
+  
+  .link-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+  }
+  
+  .link-details h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .link-category {
+    display: inline-block;
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .link-description {
+    margin: 0 0 15px 0;
+    color: #666;
+    line-height: 1.5;
+    flex: 1;
+  }
+  
+  .link-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+  }
+  
+  .buy-now-btn {
+    padding: 8px 15px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .delete-btn {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    color: #d32f2f;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .link-list-controls {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    
+    .search-container {
+      max-width: none;
+    }
+    
+    .links-container.list .link-item {
+      flex-direction: column;
+    }
+    
+    .links-container.list .link-image {
+      width: 100%;
+      height: 200px;
+    }
+  }

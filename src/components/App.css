@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  button {
+    font-family: inherit;
+  }
+  
+  input, textarea {
+    font-family: inherit;
+  }
+  
+  /* General utility classes */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #666;
+  }
+  
+  .error-message {
+    color: #d32f2f;
+  }
+  
+  .success-message {
+    color: #388e3c;
+  }
+  
+  /* Share Link Modal styles */
+  .share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+  }
+  
+  .share-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .share-modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .share-link-input {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .share-link-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+  }
+  
+  .copy-btn {
+    padding: 10px 15px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .share-modal-content .close-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .copied-message {
+    color: #388e3c;
+    text-align: center;
+    margin-bottom: 15px;
+  }
