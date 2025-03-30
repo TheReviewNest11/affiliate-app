@@ -99,8 +99,8 @@ function LinkList() {
     <div className="link-list-container">
       <div className="link-list-header">
         <h1>Your Affiliate Links</h1>
-        <Link to="/add-link" className="add-link-btn" style={{ marginBottom: '20px' }}>Add New Link</Link>
-        <ShareLinks />
+        {/* <Link to="/add-link" className="add-link-btn" style={{ marginBottom: '20px' }}>Add New Link</Link>
+        <ShareLinks /> */}
         
         <div className="link-list-controls">
           <div className="search-container">
