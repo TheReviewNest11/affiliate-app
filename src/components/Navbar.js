@@ -17,7 +17,7 @@ function Navbar() {
         </Link>
         
         <div className="navbar-menu">
-          <Link 
+          {/* <Link 
             to="/" 
             className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`}
           >
@@ -28,14 +28,14 @@ function Navbar() {
             className={`navbar-item ${location.pathname === '/add-link' ? 'active' : ''}`}
           >
             Add Link
-          </Link>
+          </Link> */}
 
           
-          <div className="navbar-right">
+          {/* <div className="navbar-right">
             <div className="navbar-user">
               <span className="navbar-username">Demo Mode</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
