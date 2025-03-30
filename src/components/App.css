@@ -4,10 +4,30 @@
     padding: 0;
   }
   
+  :root {
+    --primary-color: #FF9900;
+    --primary-hover: #e68a00;
+    --secondary-color: #232F3E;
+    --accent-color: #5d89ff;
+    --text-color: #333333;
+    --light-text: #666666;
+    --lightest-text: #999999;
+    --border-color: #e0e0e0;
+    --background-color: #f4f6f8;
+    --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+    --badge-gradient: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  }
+  
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: var(--background-color);
+    background-image: 
+      radial-gradient(#ff99001a 1px, transparent 1px),
+      radial-gradient(#2331ff1a 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    color: var(--text-color);
     line-height: 1.6;
   }
   
@@ -25,25 +45,94 @@
   
   button {
     font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
   }
   
   input, textarea {
     font-family: inherit;
+    transition: border var(--transition-speed) ease;
   }
   
-  /* General utility classes */
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
   .loading {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
-    color: #666;
+    color: var(--light-text);
+    font-size: 1.1rem;
   }
   
   .error-message {
-    color: #d32f2f;
+    color: #e53935;
+    font-weight: 500;
+    margin: 12px 0;
   }
   
   .success-message {
-    color: #388e3c;
+    color: #43a047;
+    font-weight: 500;
+    margin: 12px 0;
+  }
+  
+  /* Link styling */
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+  }
+  
+  a:hover {
+    color: var(--primary-hover);
+  }
+  
+  .buy-now-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+  }
+  
+  .buy-now-btn:hover {
+    background-color: var(--primary-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.35);
+  }
+  
+  .add-link-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.2);
+  }
+  
+  .add-link-btn:hover {
+    background-color: var(--primary-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+  }
+  
+  /* Make images load smoothly */
+  img {
+    transition: opacity 0.3s ease;
+  }
+  
+  img[loading] {
+    opacity: 0.6;
   }

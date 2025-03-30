@@ -1,91 +1,162 @@
 .add-link-container {
-    padding: 20px;
+    padding: 24px;
     max-width: 800px;
     margin: 0 auto;
   }
   
   .add-link-card {
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 32px;
+    position: relative;
+    border-top: 4px solid var(--primary-color);
+    background-image: linear-gradient(135deg, #ffffff 25%, #f9f9f9 25%, #f9f9f9 50%, #ffffff 50%, #ffffff 75%, #f9f9f9 75%, #f9f9f9);
+    background-size: 40px 40px;
   }
   
   .add-link-card h1 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #333;
+    margin-bottom: 32px;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 28px;
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   
   .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #555;
+    color: var(--text-color);
+    font-size: 15px;
   }
   
   .form-group input,
   .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
     font-size: 16px;
-    font-family: inherit;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.1);
   }
   
   .form-group textarea {
     resize: vertical;
+    min-height: 120px;
+  }
+  
+  .form-group .disabled {
+    background-color: #f8f8f8;
+    cursor: not-allowed;
+    opacity: 0.7;
   }
   
   .image-preview {
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    text-align: center;
+    margin-top: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
   }
   
   .image-preview img {
     max-width: 100%;
-    max-height: 200px;
+    max-height: 250px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
   
   .submit-btn {
     width: 100%;
-    padding: 12px;
-    background-color: #ff9900;
+    padding: 14px;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.25);
   }
   
   .submit-btn:hover {
-    background-color: #e68a00;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 153, 0, 0.3);
+  }
+  
+  .submit-btn:active {
+    transform: translateY(0);
   }
   
   .submit-btn:disabled {
     background-color: #ffcc80;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
   }
   
   .error-message {
-    color: #d32f2f;
+    color: #e53935;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 16px;
+    font-weight: 500;
   }
   
   .success-message {
-    color: #388e3c;
+    color: #43a047;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .success-message::before {
+    content: "✓";
+    display: inline-block;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  
+  .back-btn {
+    padding: 10px 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #eeeeee;
+    color: var(--text-color);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .add-link-card {
+      padding: 24px;
+    }
+    
+    .add-link-card h1 {
+      font-size: 24px;
+    }
   }

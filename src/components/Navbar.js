@@ -10,9 +10,9 @@ function Navbar() {
   const userData = getUserData();
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" style={{ backgroundColor: '#232F3E' }}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand" style={{ color: 'white', fontWeight: 'bold' }}>
           Amazon Affiliate Links
         </Link>
         
