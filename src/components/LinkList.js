@@ -34,10 +34,10 @@ function LinkList() {
 
   return (
     <div className="link-list-container">
-      <div className="link-list-header">
+      {/* <div className="link-list-header">
         <h1>Your Affiliate Links</h1>
         <Link to="/add-link" className="add-link-btn" style={{ marginBottom: '20px' }}>Add New Link</Link>
-      </div>
+      </div> */}
       
       <div className="link-list-controls">
         <div className="search-container">
